@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>aikanmv.vip</title>
+    <title>好看网</title>
     
 </head>
 <style>
@@ -49,7 +49,18 @@
             if (ua.match(/MicroMessenger/i) == "micromessenger") {
                 return "weixin";
             } else if (ua.match(/QQ/i) == "qq") {
-                return "QQ";
+                
+                var isIosQQ = ( /(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) && /\sQQ/i.test(navigator.userAgent));
+                var isAndroidQQ = ( /(Android)/i.test(navigator.userAgent) && /MQQBrowser/i.test(navigator.userAgent) && /\sQQ/i.test((navigator.userAgent).split('MQQBrowser')));
+                
+                if(isIosQQ || isAndroidQQ){
+                    return "QQ";
+                }else{
+                    return false
+                }
+                
+
+                
             }
                 return false;
         }
