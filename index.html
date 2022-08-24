@@ -18,7 +18,7 @@
     }
 </style>
 <body>
-    <div style="width: 100%">
+    <div style="width: 100% ;visibility:hidden" id="qq">
         <img src="yindao.png" alt="" style="width: 100%;">
         <h2 style="padding: 0 0 0 20px; margin-top:20px; margin-bottom: 20px;">或者&nbsp;&nbsp;<mark style="font-size: 17px;">复制网址后，手动打开浏览器观看</mark></h2>
         <div style="padding: 0 0 0 20px;">
@@ -27,6 +27,9 @@
         </div>
 
         <h2 style="padding: 0 0 0 20px; margin-top:20px; margin-bottom: 20px;">千万美女，每日免费</h2>
+    </div>
+    <div id="liulanqi" style="visibility:hidden">
+        <h2 style="padding: 0 0 0 20px;margin-top:20px; margin-bottom: 20px;">跳转中，稍等。。。。</h2>
     </div>
     <script>
         function copy(){
@@ -51,9 +54,14 @@
                 return false;
         }
 
-        if(!broswer()){
-            // window.location.href = 'http://aikanmv.vip'
-            window.location.replace('http://aikanmv.vip')
+        if(!broswer()){//浏览器
+            document.querySelector('#qq').style.display = 'none'
+            document.querySelector('#liulanqi').style.visibility = "visible"
+            setTimeout(()=>{
+                window.location.replace('http://aikanmv.vip')
+            },500)
+        }else{
+            document.querySelector('#qq').style.visibility = "visible"
         }
         
     </script>
