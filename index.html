@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>aikanmv.vip</title>
+    
+</head>
+<style>
+    html,body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+</style>
+<body>
+    <div style="width: 100%">
+        <img src="yindao.png" alt="" style="width: 100%;">
+        <h2 style="padding: 0 0 0 20px; margin-top:20px; margin-bottom: 20px;">或者&nbsp;&nbsp;<mark style="font-size: 17px;">复制网址后，手动打开浏览器观看</mark></h2>
+        <div style="padding: 0 0 0 20px;">
+            <u>http://aikanmv.vip</u>
+            <button onclick="copy()">复制网址</button>
+        </div>
+
+        <h2 style="padding: 0 0 0 20px; margin-top:20px; margin-bottom: 20px;">千万美女，每日免费</h2>
+    </div>
+    <script>
+        function copy(){
+            const el = document.createElement('input');
+            el.setAttribute('value', "http://aikanmv.vip");
+            document.body.appendChild(el);
+            el.select();
+            const flag = document.execCommand('copy');
+            document.body.removeChild(el);
+            flag && alert('已复制，打开手机浏览器，粘贴网址观看。');
+        }
+        /**
+        * 判断是否在微信里打开
+        */
+        const broswer = () => {
+            const ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                return "weixin";
+            } else if (ua.match(/QQ/i) == "qq") {
+                return "QQ";
+            }
+                return false;
+        }
+
+        if(!broswer()){
+            // window.location.href = 'http://aikanmv.vip'
+            // window.location.replace('http://aikanmv.vip')
+        }
+        
+    </script>
+</body>
+</html>
